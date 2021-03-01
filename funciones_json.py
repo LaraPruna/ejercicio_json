@@ -15,3 +15,8 @@ def ListaPelis():
 Año de estreno: {pel.get("anio")}''')
 			print()
 
+def ContarPelis():
+	for cat in LeerJson().get("categorias"):
+		if cat.get("categoria")!="Avengers":
+			print(cat.get("categoria")+": ")
+			print(len(cat.get("playlist")))
