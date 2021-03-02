@@ -1,4 +1,4 @@
-from funciones_json import LeerJson,ListaPelis,ContarPelis,FiltroIntervalo
+from funciones_json import *
 opcion=int(input('''Elige una opción del siguiente menú:
 
 1. Lista de películas
@@ -33,6 +33,14 @@ while opcion!=6:
 		fin=int(input("Año final del intervalo: "))
 		print()
 		FiltroIntervalo(inicio,fin)
+		print()
+	elif opcion==4:
+		print("Lista de actores en la base de datos:")
+		print()
+		ListaActores()
+		print()
+		act=input("Introduce el nombre de un actor de la lista anterior: ")
+		FiltroActor(act)
 		print()
 	opcion=int(input('''Elige una opción del siguiente menú:
 

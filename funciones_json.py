@@ -29,4 +29,18 @@ def FiltroIntervalo(inicio,fin):
 				print("Año de estreno: "+pel.get("anio"))
 				print()
 
-def 
+def ListaActores():
+	actores=[]
+	for cat in LeerJson().get("categorias"):
+		for pel in cat.get("playlist"):
+			for actor in pel.get("actors"):
+				if actor not in actores:
+					actores.append(actor)
+	for elem in actores:
+		print(elem)
+
+def FiltroActor(actor):
+	for cat in LeerJson().get("categorias"):
+		for pel in cat.get("playlist"):
+			if actor in pel.get("actors"):
+				print(pel.get("titulo"))
