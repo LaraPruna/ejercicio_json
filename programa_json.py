@@ -42,6 +42,25 @@ while opcion!=6:
 		act=input("Introduce el nombre de un actor de la lista anterior: ")
 		FiltroActor(act)
 		print()
+	else:
+		print("Lista de actores en la base de datos:")
+		print()
+		ListaCat()
+		print()
+		cat=input("Introduce el nombre de una categoría de la lista anterior: ")
+		while cat not in ListaCat():
+			print("Esa categoría no se encuentra en la lista.")
+			cat=input("Introduce el nombre de una categoría de la lista anterior: ")
+		print()
+		ListaActores()
+		print()
+		act=input("Introduce el nombre de un actor de la lista anterior: ")
+		while actor not in ListaActores():
+			print("Ese nombre no se encuentra en la lista.")
+			act=input("Introduce el nombre de un actor de la lista anterior: ")
+		print()
+		FiltroActorCatTrailer(act,cat)
+		print()
 	opcion=int(input('''Elige una opción del siguiente menú:
 
 1. Lista de películas

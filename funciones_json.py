@@ -44,3 +44,15 @@ def FiltroActor(actor):
 		for pel in cat.get("playlist"):
 			if actor in pel.get("actors"):
 				print(pel.get("titulo"))
+
+def ListaCat():
+	for cat in LeerJson().get("categorias"):
+		print(cat.get("categoria"))
+
+def FiltroActorCatTrailer(actor,categ):
+	for cat in LeerJson().get("categorias"):
+		if categ==cat.get("categoria"):
+			for pel in cat.get("playlist"):
+				if actor in pel.get("actors") and len(pel.get("trailer"))>=1:
+					print("Título: "+pel.get("titulo"))
+					print("Trailer: "+pel.get("trailer"))
