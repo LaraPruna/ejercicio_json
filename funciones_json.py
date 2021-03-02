@@ -20,3 +20,13 @@ def ContarPelis():
 		if cat.get("categoria")!="Avengers":
 			print(cat.get("categoria")+": ")
 			print(len(cat.get("playlist")))
+
+def FiltroIntervalo(inicio,fin):
+	for cat in LeerJson().get("categorias"):
+		for pel in cat.get("playlist"):
+			if int(pel.get("anio"))>=inicio and int(pel.get("anio"))<=fin:
+				print("Título: "+pel.get("titulo"))
+				print("Año de estreno: "+pel.get("anio"))
+				print()
+
+def 
