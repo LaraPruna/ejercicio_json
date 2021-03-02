@@ -36,8 +36,7 @@ def ListaActores():
 			for actor in pel.get("actors"):
 				if actor not in actores:
 					actores.append(actor)
-	for elem in actores:
-		print(elem)
+	return actores
 
 def FiltroActor(actor):
 	for cat in LeerJson().get("categorias"):
@@ -46,13 +45,30 @@ def FiltroActor(actor):
 				print(pel.get("titulo"))
 
 def ListaCat():
+	categorias=[]
 	for cat in LeerJson().get("categorias"):
-		print(cat.get("categoria"))
+		categorias.append(cat.get("categoria"))
+	return categorias
 
-def FiltroActorCatTrailer(actor,categ):
+def FiltroActorCat(categ):
+	actores=[]
 	for cat in LeerJson().get("categorias"):
 		if categ==cat.get("categoria"):
 			for pel in cat.get("playlist"):
-				if actor in pel.get("actors") and len(pel.get("trailer"))>=1:
+				for actor in pel.get("actors"):
+					if actor not in actores:
+						actores.append(actor)
+	return actores
+
+
+def FiltroActorCatTrailer(actor,categ):
+	ind=True
+	for cat in LeerJson().get("categorias"):
+		if categ==cat.get("categoria"):
+			for pel in cat.get("playlist"):
+				if actor in pel.get("actors") and len(pel.get("trailer"))!=0:
 					print("Título: "+pel.get("titulo"))
 					print("Trailer: "+pel.get("trailer"))
+					ind=False
+	if ind:
+		print("No hay trailer disponible en ninguna pelicula.")
