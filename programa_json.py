@@ -9,7 +9,7 @@ opcion=int(input('''Elige una opción del siguiente menú:
 6. Salir
 
 Opción: '''))
-while opcion<1 and opcion>6:
+while opcion<1 or opcion>6:
 	print("Error. Introduce el número de la opción correcta.")
 	opcion=int(input('''Elige una opción del siguiente menú:
 
