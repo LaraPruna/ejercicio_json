@@ -22,7 +22,10 @@ while opcion<1 or opcion>6:
 
 Opción: '''))
 while opcion!=6:
-	if opcion==1:
+	if opcion<1 or opcion>6:
+		print("Error. Introduce el número de la opción correcta.")
+		print()
+	elif opcion==1:
 		ListaPelis()
 		print()
 	elif opcion==2:
