@@ -49,7 +49,7 @@ while opcion!=6:
 			act=input("Introduce el nombre de un actor de la lista anterior: ")
 		FiltroActor(act)
 		print()
-	else:
+	elif opcion==5:
 		print("Lista de categorías en la base de datos: ")
 		print()
 		for categ in ListaCat():
